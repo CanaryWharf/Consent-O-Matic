@@ -1,6 +1,6 @@
 {
-	"$schema": "https://raw.githubusercontent.com/cavi-au/Consent-O-Matic/master/rules.schema.json",
-    "google_popup": {
+    "$schema": "https://raw.githubusercontent.com/CanaryWharf/Consent-O-Matic/master/rules.schema.json",
+    "google_popup_stuff": {
         "detectors": [
             {
                 "presentMatcher": [
@@ -28,7 +28,9 @@
                         "type": "css",
                         "target": {
                             "selector": "[role=\"dialog\"]",
-                            "textFilter": "g.co/privacytools"
+                            "textFilter": [
+                                "g.co/privacytools"
+                            ]
                         }
                     }
                 ]
@@ -36,47 +38,18 @@
         ],
         "methods": [
             {
-                "name": "HIDE_CMP"
-            },
-            {
                 "action": {
                     "type": "click",
                     "target": {
                         "selector": "[role=\"dialog\"] button, [role=\"dialog\"] a",
                         "textFilter": [
-                            "Pasmaak",
-                            "Fərdiləşdirin",
-                            "Prilagodi",
-                            "Personalitza",
-                            "Přizpůsobit",
-                            "Addasu",
-                            "Přizpůsobit",
-                            "Tilpas",
-                            "Anpassen",
-                            "Kohanda",
-                            "Customise",
-                            "Personalizar",
-                            "Pertsonalizatu",
-                            "I-customize",
-                            "Saincheap",
-                            "Personalizar",
-                            "Sesuaikan",
-                            "Personalizza",
-                            "Aanpassen",
-                            "Personnaliser",
-			    "More options",
-			    "Flere alternativer",
-			    "Weitere Optionen",
-			    "Flere valgmuligheder",
-			    "Plus d'options",
-			    "Fler alternativ",
-			    "Más opciones",
-			    "Mais opções",
-			    "Meer opties",
-			    "Więcej opcji"
+                            "Reject all"
                         ]
                     }
                 },
+                "name": "HIDE_CMP"
+            },
+            {
                 "name": "OPEN_OPTIONS"
             },
             {
